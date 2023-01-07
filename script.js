@@ -41,4 +41,14 @@ $(document).ready(() => {
     $('.vid1').css('display', 'none')
     $('.vid2').css('display', 'none')
   })
+  $('#dot1').click();
+  function staggerd(id) {
+    if (id <= 3) {
+      setTimeout(() => {
+        $(`#dot${id}`).click();
+        staggerd(id + 1);
+      }, 5000);
+    }
+  }
+  staggerd(2);
 })
